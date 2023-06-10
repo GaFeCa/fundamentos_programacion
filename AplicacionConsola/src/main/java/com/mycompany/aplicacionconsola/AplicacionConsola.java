@@ -1,5 +1,6 @@
 package com.mycompany.aplicacionconsola;
 
+import com.mycompany.aplicacionconsola.matematicas.Calculadora;
 import java.util.Scanner;
 
 /**
@@ -26,6 +27,8 @@ public class AplicacionConsola {
         numero1=leerPorTeclado.nextDouble();
         System.out.println("Ingresa numero2");
         numero2=leerPorTeclado.nextDouble();
+        
+        Calculadora calculadora = new Calculadora(numero1, numero2);
         
         if(opcion==1){
             resultado = AplicacionConsola.getSuma(numero1, numero2);
