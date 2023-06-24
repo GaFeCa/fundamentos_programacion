@@ -15,16 +15,17 @@ public class Utils {
     public static void guardarUsuario(Usuario usuario){
         try {
            String linea = usuario.getName()+";"+ usuario.getLastname()+";"+usuario.getDocumentNumber()+";"+usuario.getDocumentType();
-            File archivo = new File("C:\\Users\\AULA304-PC6\\Desktop\\usuarios.txt");
+            File archivo = new File("C:\\Users\\andrw\\Desktop\\usuarios.txt");
 
             // Crear el FileWriter con el archivo como parámetro
-            FileWriter escritorArchivo = new FileWriter(archivo);
+            FileWriter escritorArchivo = new FileWriter(archivo, true); // El segundo parámetro "true" indica que se agregará al archivo existente en lugar de sobrescribirlo.
 
             // Crear el BufferedWriter
             BufferedWriter bufferEscritura = new BufferedWriter(escritorArchivo);
 
             // Escribir en el archivo
             bufferEscritura.write(linea);
+            bufferEscritura.newLine(); // Agrega una nueva línea después de cada registro para el listado de datos.
 
             // Cerrar el BufferedWriter
             bufferEscritura.close();
